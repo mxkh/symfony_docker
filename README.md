@@ -22,7 +22,7 @@ All of my projects stores under **~/PhpstormProjects** folder with next structur
 - **~/PhpstormProjects/docker/nginx-proxy** - path to nginx-proxy docker external container
 - **~/PhpstormProjects/docker/symfony_docker** - path to example project
 
-####Configuration steps
+###Configuration steps
 **Install docker-sync**
 
 `gem install docker-sync` more details in [documentation](https://github.com/EugenMayer/docker-sync/wiki/1.-Installation)
@@ -107,7 +107,7 @@ You can find content of docker-sync file in this project
 
 You can find content of this files in this project under the docker folder
 
-####Configure xDebug in PHPStorm
+###Configure xDebug in PHPStorm
 
 Add next lines to your php service in docker-compose-dev.yml
 ```
