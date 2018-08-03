@@ -1,0 +1,45 @@
+options:
+    compose-file-path: './docker-compose.yml'
+    compose-dev-file-path: './docker-compose-dev.yml'
+    verbose: true
+
+version: '2'
+syncs:
+    symfony-docker-vendor-sync:
+        src: './vendor/'
+        sync_strategy: 'rsync'
+        sync_args: '--delete'
+        sync_host_port: 10872
+        sync_excludes: ["bin/"]
+        notify_terminal: true
+    symfony-docker-src-sync:
+        src: './src'
+        sync_host_port: 10873
+        sync_userid: '33'
+        sync_args: '-prefer newer -copyonconflict'
+        notify_terminal: true
+    symfony-docker-bin-sync:
+        src: './bin'
+        sync_host_port: 10874
+        sync_userid: '33'
+        sync_args: '-prefer newer -copyonconflict'
+        notify_terminal: true
+    symfony-docker-web-sync:
+        src: './web'
+        sync_host_port: 10875
+        sync_userid: '33'
+        sync_args: '-prefer newer -copyonconflict'
+        notify_terminal: true
+    symfony-docker-app-sync:
+        src: './app'
+        sync_host_port: 10876
+        sync_userid: '33'
+        sync_args: '-prefer newer -copyonconflict'
+        notify_terminal: true
+    symfony-docker-var-sync:
+        src: './var'
+        sync_host_port: 10877
+        sync_userid: '33'
+        sync_args: '-prefer newer -copyonconflict'
+        sync_excludes: ["cache", "logs", "sessions"]
+        notify_terminal: true

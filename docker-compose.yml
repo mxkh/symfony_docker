@@ -1,0 +1,12 @@
+version: "3"
+services:
+    php:
+        build:
+            context: .
+            dockerfile: docker/php.dockerfile
+    nginx:
+        build:
+            context: .
+            dockerfile: docker/nginx.dockerfile
+        env_file:
+        - web-variables.env
