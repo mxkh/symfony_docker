@@ -29,7 +29,7 @@ This sounds cool, but in fact, Docker works fine only on Linux systems, on Windo
 In the following chapters, we will configure a basic Symfony application from scratch.
 
 ### Docker sync
-So, first, we need to install docker-sync
+So, firstly, we need to install docker-sync
 
 `gem install docker-sync` - more details about installation on your system you can read in the official [Wiki](https://github.com/EugenMayer/docker-sync/wiki/1.-Installation) page.
 
@@ -543,4 +543,4 @@ will opening at the specified breakpoint.
 That's all, enjoy! 🖤
 
 # FIN
-_I hope this guide helps you better understand docker and save time!_
+_I hope this guide helps you better understand docker and saves your time!_
