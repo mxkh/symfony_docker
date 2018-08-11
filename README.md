@@ -540,7 +540,6 @@ For example, you made a new Symfony command, let's say `my:awesome:command` and 
 creating a breakpoint in PHPStorm, just run command `sfdbg my:awesome:command` and the PHPStorm window
 will opening at the specified breakpoint.
 
-That's all, enjoy! 🖤
+That's all! _I hope this guide helps you better understand docker and save time!_
 
-# FIN
-_I hope this guide helps you better understand docker and save time!_
+# FIN 🖤
