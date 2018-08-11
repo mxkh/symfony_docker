@@ -55,5 +55,9 @@ RUN docker-php-ext-enable xdebug mcrypt imagick
 COPY . $INSTALL_DIR
 
 COPY docker/xdebug.conf /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+COPY docker/php.dev.ini /usr/local/etc/php/conf.d/php.dev.ini
+COPY docker/php-debug /usr/local/bin/phpxdbg
+COPY docker/sf-debug /usr/local/bin/sfdbg
+RUN chmod 755 /usr/local/bin/phpxdbg && chmod 755 /usr/local/bin/sfdbg
 
 WORKDIR $INSTALL_DIR

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#env PHP_IDE_CONFIG="serverName=vagrant" XDEBUG_CONFIG="idekey=PHPSTORM" SYMFONY_DEBUG="1" $@
+
+php -d xdebug.remote_host=192.168.31.231 -d xdebug.remote_autostart=1 bin/console $@

@@ -8,13 +8,9 @@ services:
         - mysql_default
         volumes:
         - symfony-docker-vendor-sync:/opt/vendor:nocopy
-        - symfony-docker-src-sync:/opt/src:nocopy
-        - symfony-docker-bin-sync:/opt/bin:nocopy
-        - symfony-docker-web-sync:/opt/web:nocopy
-        - symfony-docker-app-sync:/opt/app:nocopy
-        - symfony-docker-var-sync:/opt/var:nocopy
+        - symfony-docker-app-sync:/opt:nocopy
         environment:
-            XDEBUG_CONFIG: "remote_host=192.168.56.1"
+            XDEBUG_CONFIG: "remote_host=192.168.31.231"
             PHP_IDE_CONFIG: "serverName=docker"
     nginx:
         external_links:
@@ -30,11 +26,7 @@ services:
         - 80
         volumes:
         - symfony-docker-vendor-sync:/opt/vendor:nocopy
-        - symfony-docker-src-sync:/opt/src:nocopy
-        - symfony-docker-bin-sync:/opt/bin:nocopy
-        - symfony-docker-web-sync:/opt/web:nocopy
-        - symfony-docker-app-sync:/opt/app:nocopy
-        - symfony-docker-var-sync:/opt/var:nocopy
+        - symfony-docker-app-sync:/opt:nocopy
 networks:
     mysql_default:
         external: true
@@ -43,15 +35,7 @@ networks:
 volumes:
     symfony-docker-vendor-sync:
         external: true
-    symfony-docker-src-sync:
-        external: true
-    symfony-docker-bin-sync:
-        external: true
-    symfony-docker-web-sync:
-        external: true
     symfony-docker-app-sync:
-        external: true
-    symfony-docker-var-sync:
         external: true
     mysql-data:
         external: true
