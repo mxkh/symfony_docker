@@ -1,6 +1,6 @@
 options:
-    compose-file-path: './docker-compose.yml'
-    compose-dev-file-path: './docker-compose-dev.yml'
+    compose-file-path: './docker-compose-dev.yml'
+    #compose-dev-file-path: './docker-compose-dev.yml'
     verbose: true
 
 version: '2'

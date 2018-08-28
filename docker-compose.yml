@@ -1,12 +1,35 @@
-version: '3'
+version: "3"
 services:
   php:
     build:
       context: .
-      dockerfile: docker/php.dockerfile
+      dockerfile: docker/php/php.prod.dockerfile
+    env_file:
+    - web-variables.env
+    external_links:
+    - mysql_db_1:db
+    networks:
+    - default
+    - mysql_default
+    volumes:
+    - ./:/opt
   nginx:
     build:
       context: .
-      dockerfile: docker/nginx.dockerfile
+      dockerfile: docker/nginx/nginx.dockerfile
     env_file:
-      - web-variables.env
+    - web-variables.env
+    links:
+    - php
+    depends_on:
+    - php
+    ports:
+    - "80:80"
+    volumes:
+    - ./:/opt
+networks:
+  mysql_default:
+    external: true
+volumes:
+  mysql-data:
+    external: true

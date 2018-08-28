@@ -1,6 +1,11 @@
 version: "3"
 services:
     php:
+        build:
+            context: .
+            dockerfile: docker/php/php.dockerfile
+        env_file:
+        - web-variables.env
         external_links:
         - mysql_db_1:db
         networks:
@@ -13,6 +18,11 @@ services:
             XDEBUG_CONFIG: "remote_host=192.168.31.231"
             PHP_IDE_CONFIG: "serverName=docker"
     nginx:
+        build:
+            context: .
+            dockerfile: docker/nginx/nginx.dockerfile
+        env_file:
+        - web-variables.env
         external_links:
         - nginx-proxy_nginx-proxy_1:nginx-proxy
         links:
